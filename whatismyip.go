@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"net"
 	"net/http"
-	"strings"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	ipAddress := strings.Split(r.RemoteAddr, ":")[0]
+	ipAddress, _, _ := net.SplitHostPort(r.RemoteAddr)
 	fmt.Fprintf(w, "%s", ipAddress)
 }
 
