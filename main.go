@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net"
 	"net/http"
 )
@@ -20,5 +21,8 @@ func main() {
 	hostAndPort := fmt.Sprintf(":%d", *port)
 
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(hostAndPort, nil)
+	err := http.ListenAndServe(hostAndPort, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
