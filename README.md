@@ -10,3 +10,7 @@ Real Client IP using Proxy server
  * REMOTE_HOST
  * HTTP_X_FORWARDED_FOR
  * HTTP_CLIENT_IP
+
+
+password protection
+ * user auth
